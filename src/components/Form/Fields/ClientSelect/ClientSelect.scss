@@ -1,0 +1,152 @@
+.ClientSelect {
+	display: block;
+	position: relative;
+	margin-bottom: 15px;
+	font-size: 14px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  
+  &:nth-child(1) { z-index: 5 }
+	&:nth-child(2) { z-index: 4 }
+	&:nth-child(3) { z-index: 3 }
+	&:nth-child(4) { z-index: 2 }
+	&:nth-child(5) { z-index: 1 }
+}
+
+.ClientSelect__label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 20px;
+  // font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.ClientSelect__field {
+  width: 100%;
+  border: solid 1px #999;
+  padding: 5px 5px;
+  font-size: 16px;
+  outline: none;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(#000, .1);
+  }
+}
+
+.ClientSelect__error {
+  display: 'block';
+  color: 'red';
+}
+
+.ClientSelect__group {
+  position: relative;
+}
+
+.ClientSelect__reset {
+  position: absolute;
+  top: 0;
+  right: 10px;
+	width: 10px;
+	height: 10px;
+}
+
+
+.ClientSelect__items {
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	background: #FFF;
+	border: solid 1px #999;
+	border-top: none;
+	box-shadow: 0px 5px 5px -3px rgba(#000, .2);
+}
+
+.ClientSelect__item {
+	position: relative;
+	padding: 5px 10px;
+	cursor: pointer;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 10%;
+		bottom: -1px;
+		width: 80%;
+		height: 1px;
+		background: #EEE;
+	}
+
+	&:hover {
+		background: #EEE;
+  }
+  
+	&:hover::after{
+		content: none;
+	}
+
+	&:last-child::after{
+		content: none;
+	}
+
+	span {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		margin-right: 5px;
+		border-radius: 50%;
+	}
+
+}
+
+.ClientSelect__newClient {
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	padding: 10px;
+	background: #FFF;
+	border: solid 1px #999;
+	border-top: none;
+  box-shadow: 0px 5px 5px -3px rgba(#000, .2);
+}
+
+
+
+.FormNewClient {
+}
+
+.FormNewClient__group {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.FormNewClient__label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.FormNewClient__color {
+	display: inline-block;
+	margin: 0 5px 5px 0;
+	width: 25px;
+	height: 25px;
+	border-radius: 3px;
+
+	&:hover {
+		box-shadow: 0 0 0 2px #CCC;
+	}
+
+	&.-current {
+		box-shadow: 0 0 0 2px red;
+	}
+}
+
+.FormNewClient__textarea {
+	width: 100%;
+}
+
+.FormNewClient__checkbox {
+	margin-right: 3px;
+}
+
+.FormNewClient__labelCheckbox {
+	font-size: 16px;
+}

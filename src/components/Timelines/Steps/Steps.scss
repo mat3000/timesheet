@@ -1,0 +1,106 @@
+@import '../../../styles/tools.scss';
+
+
+.Steps{
+	position: relative;
+	height: 100%;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.Steps__break {
+	position: absolute;
+	left: 0;
+	// top: 25%;
+	width: 100%;
+	// height: 50%;
+	background: rgba(#000, 0.1);
+}
+
+
+
+/* Step */
+.Steps__group{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+
+	flex-direction: column;
+}
+
+.Steps__step{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-bottom: dashed 1px rgba(0, 0, 0, 0.1);
+
+	&.-integer{
+		border-bottom: dashed 1px rgba(0, 0, 0, 0.4);
+	}
+
+	&:last-child{ border: none; }
+
+}
+
+.Steps__step__hour{
+
+	&::before,
+	&::after{
+		position: absolute;
+		top: -20px;
+		width: 100px;
+		text-align: center;	
+		color: #FFF;
+		font-size: 9px;
+		transition: all .3s linear;
+	}
+
+	&::before{
+		content: attr(data-time-start);
+		left: 0px;
+		color: #AAA;
+		top: -16px;
+		transform: translateX(-50%);
+		opacity: 0;
+	}
+
+	.Steps__step:nth-child(2n+2) &::before{
+		opacity: 0;
+
+		@media screen and (min-width: 1024px) {
+			opacity: 1;
+		}
+	}
+
+	.Steps__step:nth-child(2n+1) &::before{
+		opacity: 0;
+
+		@media screen and (min-width: 640px) {
+			opacity: 1;
+		}
+	}
+
+	.Steps__step:nth-child(4n+1) &::before{
+		top: -20px;
+		font-size: 15px;
+		color: #FFF;
+		opacity: 1;
+	}
+
+	.Steps__step:last-child &::after{
+		content: attr(data-time-end);
+		right: 0px;
+		font-size: 15px;
+		transform: translateX(50%);
+	}
+}
+
+.Steps__now {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: red;
+}

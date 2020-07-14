@@ -1,0 +1,15 @@
+@import '../../styles/tools.scss';
+
+.Button {
+  @include reset-button();
+
+  margin-right: 5px;
+  padding: 10px 30px;
+  font-size: 16px;
+  background: #EEE;
+  color: #333;
+
+  &:active {
+    background: #DDD;
+  }
+}

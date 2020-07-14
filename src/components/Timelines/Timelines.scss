@@ -1,0 +1,72 @@
+@import '../../styles/tools.scss';
+
+.Timelines {    
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.Timelines__nav {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-bottom: 10px;
+}
+
+.Timelines__option {
+	@include reset-button();
+
+	color: #FFF;
+	// display:
+	// border-top: solid 2px #FFF;
+	// border-bottom: solid 2px #FFF;
+}
+
+.Timelines__date {
+	display: flex;
+	justify-content: space-between; 
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 15px;
+	// color: grey;
+
+	// b {
+	// 	color: white;
+	// }
+
+	// & > span > span {
+	// 	color: white;
+	// }
+}
+
+.Timelines__previous {
+	@include reset-button();
+	
+	&::after {
+		content: '';
+		display: block;
+		width: 10px;
+		height: 10px;
+		border-top: solid 1px #FFF;
+		border-left: solid 1px #FFF;
+		transform: rotateZ(-45deg) translate(5px,5px);
+	}
+}
+
+.Timelines__next {
+	@include reset-button();
+	
+	&::after {
+		content: '';
+		display: block;
+		width: 10px;
+		height: 10px;
+		border-top: solid 1px #FFF;
+		border-right: solid 1px #FFF;
+		transform: rotateZ(45deg) translate(-5px,5px);
+	}
+}
+
+.Timelines__content{
+	display: flex;
+	height: 100%;
+}
